@@ -92,8 +92,6 @@ static UIImage *IconForOptionType(DWPayOptionModelType type) {
     self.titleLabel.font = [UIFont dw_fontForTextStyle:UIFontTextStyleFootnote];
     self.descriptionLabel.font = [UIFont dw_fontForTextStyle:UIFontTextStyleSubheadline];
 
-    // KVO
-
     [self mvvm_observe:DW_KEYPATH(self, model.details)
                   with:^(typeof(self) self, NSString *value) {
                       [self updateDetails];

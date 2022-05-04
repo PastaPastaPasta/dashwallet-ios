@@ -98,11 +98,8 @@ NS_ASSUME_NONNULL_BEGIN
         DWPayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:DWPayTableViewCell.dw_reuseIdentifier
                                                                    forIndexPath:indexPath];
         cell.model = option;
-        
         return cell;
     }
-    
-    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

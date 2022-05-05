@@ -48,6 +48,7 @@
         NSFontAttributeName : [UIFont dw_navigationBarTitleFont],
     };
 
+    navigationBar.backgroundColor = [UIColor dw_backgroundColor];
     navigationBar.shadowImage = [[UIImage alloc] init];
 }
 

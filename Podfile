@@ -7,7 +7,7 @@ target 'dashwallet' do
 
   pod 'CloudInAppMessaging', '0.1.0'
 
-  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/DynamicLinks', '8.15.0'
   
   pod 'KVO-MVVM', '0.5.6'
   pod 'UIViewController-KeyboardAdditions', '1.2.1'
@@ -33,7 +33,6 @@ end
 
 target 'TodayExtension' do
   platform :ios, '13.0'
-  
   pod 'DSDynamicOptions', '0.1.2'
 
 end

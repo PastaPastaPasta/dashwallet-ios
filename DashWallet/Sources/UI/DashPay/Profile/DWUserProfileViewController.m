@@ -114,6 +114,12 @@ NS_ASSUME_NONNULL_END
     self.navigationItem.titleView = titleView;
 
     [self.view addSubview:self.collectionView];
+    [NSLayoutConstraint activateConstraints:@[
+        [self.collectionView.topAnchor constraintEqualToAnchor:self.view.safeAreaLayoutGuide.topAnchor],
+        [self.collectionView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+        [self.view.trailingAnchor constraintEqualToAnchor:self.collectionView.trailingAnchor],
+        [self.view.safeAreaLayoutGuide.bottomAnchor constraintEqualToAnchor:self.collectionView.bottomAnchor],
+    ]];
 }
 
 - (void)viewDidLayoutSubviews {
@@ -409,12 +415,11 @@ NS_ASSUME_NONNULL_END
         topOverscrollView.backgroundColor = [UIColor dw_backgroundColor];
         _topOverscrollView = topOverscrollView;
 
-
         DWStretchyHeaderListCollectionLayout *layout = [[DWStretchyHeaderListCollectionLayout alloc] init];
 
         UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:UIScreen.mainScreen.bounds
                                                               collectionViewLayout:layout];
-        collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        collectionView.translatesAutoresizingMaskIntoConstraints = NO;
         collectionView.dataSource = self;
         collectionView.delegate = self;
         collectionView.backgroundColor = [UIColor dw_secondaryBackgroundColor];
@@ -435,7 +440,6 @@ NS_ASSUME_NONNULL_END
                    withReuseIdentifier:DWFilterHeaderView.dw_reuseIdentifier];
 
         [collectionView addSubview:topOverscrollView];
-
         _collectionView = collectionView;
     }
     return _collectionView;

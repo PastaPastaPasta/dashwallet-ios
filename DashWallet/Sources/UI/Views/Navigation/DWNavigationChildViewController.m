@@ -87,7 +87,13 @@
             break;
     }
 
+    [navigationBar dw_applyStandardAppearance];
     [self setNeedsStatusBarAppearanceUpdate];
 }
+
+- (UIBarPosition)positionForBar:(id <UIBarPositioning>)bar {
+    return UIBarPositionTopAttached;
+}
+
 
 @end

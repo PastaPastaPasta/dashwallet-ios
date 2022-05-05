@@ -102,6 +102,12 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    DWPayOptionModel *option = self.payModel.options[indexPath.row];
+    if(option.type == DWPayOptionModelType_Pasteboard) {
+        [self.payModel checkPasteboardForAddresses];
+    }
+}
 #pragma mark - UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -152,6 +158,8 @@ NS_ASSUME_NONNULL_BEGIN
         [self.tableView registerNib:nib forCellReuseIdentifier:cellId];
     }
 
+    self.tableView.estimatedRowHeight = 40.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 

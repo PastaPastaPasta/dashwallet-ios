@@ -219,16 +219,6 @@ NS_ASSUME_NONNULL_BEGIN
         alertControllerWithTitle:NSLocalizedString(@"Network", nil)
                          message:nil
                   preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *mainnet = [UIAlertAction
-        actionWithTitle:DSLocalizedString(@"Mainnet", nil)
-                  style:UIAlertActionStyleDefault
-                handler:^(UIAlertAction *action) {
-                    [DWSettingsMenuModel switchToMainnetWithCompletion:^(BOOL success) {
-                        if (success) {
-                            [self updateSwitchNetworkCellModel];
-                        }
-                    }];
-                }];
     UIAlertAction *testnet = [UIAlertAction
         actionWithTitle:DSLocalizedString(@"Testnet", nil)
                   style:UIAlertActionStyleDefault
@@ -255,7 +245,6 @@ NS_ASSUME_NONNULL_BEGIN
         actionWithTitle:NSLocalizedString(@"Cancel", nil)
                   style:UIAlertActionStyleCancel
                 handler:nil];
-    [actionSheet addAction:mainnet];
     [actionSheet addAction:testnet];
     [actionSheet addAction:evonet];
     [actionSheet addAction:cancel];

@@ -24,7 +24,7 @@
 
 static NSString *const AndroidBundleID = @"org.dash.dashpay.testnet";
 // TODO: DP set app store id
-static NSString *const iOSAppStoreID = @"1560401158";
+static NSString *const iOSAppStoreID = @"1563288407";
 
 @implementation DWInvitationLinkBuilder
 

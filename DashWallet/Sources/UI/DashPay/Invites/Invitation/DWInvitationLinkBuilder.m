@@ -22,7 +22,7 @@
 
 #import "DSBlockchainIdentity+DWDisplayName.h"
 
-static NSString *const AndroidBundleID = @"hashengineering.darkcoin.wallet_test";
+static NSString *const AndroidBundleID = @"org.dash.dashpay.testnet";
 // TODO: DP set app store id
 static NSString *const iOSAppStoreID = @"1560401158";
 

@@ -29,6 +29,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 NS_ASSUME_NONNULL_END
 
+static NSTimeInterval DEBOUNCE_DELAY = 0.2;
+
 @implementation DWInvitationActionsView
 
 - (instancetype)initWithFrame:(CGRect)frame {
@@ -50,13 +52,15 @@ NS_ASSUME_NONNULL_END
         textField.font = [UIFont dw_fontForTextStyle:UIFontTextStyleBody];
         textField.textColor = [UIColor dw_darkTitleColor];
         textField.returnKeyType = UIReturnKeyDone;
-        textField.delegate = self;
         textField.backgroundColor = [UIColor dw_backgroundColor];
         textField.layer.cornerRadius = 8;
         textField.layer.masksToBounds = YES;
+        textField.delegate = self;
         textField.placeholder = NSLocalizedString(@"eg: Dad", @"Invitation tag placeholder");
+        [textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         [self addSubview:textField];
-
+        _tagTextField = textField;
+        
         DWActionButton *copyButton = [[DWActionButton alloc] init];
         copyButton.translatesAutoresizingMaskIntoConstraints = NO;
         copyButton.inverted = YES;
@@ -95,11 +99,14 @@ NS_ASSUME_NONNULL_END
 
 #pragma mark - UITextFieldDelegate
 
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self.delegate invitationActionsView:self didChangeTag:textField.text ?: @""];
-    });
-    return YES;
+- (void)textFieldDidChange:(UITextField *)textField {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(tagDidUpdate) object:nil];
+    
+    [self performSelector:@selector(tagDidUpdate) withObject:nil afterDelay:DEBOUNCE_DELAY];
+}
+
+- (void)tagDidUpdate {
+    [self.delegate invitationActionsView:self didChangeTag:_tagTextField.text ?: @""];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

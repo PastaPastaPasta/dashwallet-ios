@@ -120,6 +120,7 @@ NS_ASSUME_NONNULL_END
         DWInvitationActionsView *actionsView = [[DWInvitationActionsView alloc] initWithFrame:CGRectZero];
         actionsView.translatesAutoresizingMaskIntoConstraints = NO;
         actionsView.delegate = self;
+        
         _actionsView = actionsView;
     }
     return _actionsView;
@@ -218,6 +219,7 @@ NS_ASSUME_NONNULL_END
     DSWallet *wallet = [DWEnvironment sharedInstance].currentWallet;
     DSBlockchainIdentity *myBlockchainIdentity = wallet.defaultBlockchainIdentity;
     [self.topView setBlockchainIdentity:myBlockchainIdentity];
+    self.actionsView.tagTextField.text = _invitation.tag;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -241,6 +243,7 @@ NS_ASSUME_NONNULL_END
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
 
+    [self.invitation updateInWallet];
     [self ka_stopObservingKeyboardNotifications];
 }
 
@@ -296,6 +299,7 @@ NS_ASSUME_NONNULL_END
 #pragma mark - DWInvitationActionsViewDelegate
 
 - (void)invitationActionsView:(DWInvitationActionsView *)view didChangeTag:(NSString *)tag {
+    [self.invitation setTag:tag];
 }
 
 - (void)invitationActionsViewCopyButtonAction:(DWInvitationActionsView *)view {

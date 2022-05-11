@@ -16,6 +16,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DWTextField.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DWInvitationActionsView : UIView
 
+@property (nonatomic, strong) DWTextField *tagTextField;
 @property (nullable, nonatomic, weak) id<DWInvitationActionsViewDelegate> delegate;
 
 @end

@@ -45,11 +45,13 @@ NS_ASSUME_NONNULL_END
 @implementation DWInvitationHistoryItemImpl
 
 @synthesize blockchainInvitation = _blockchainInvitation;
+@synthesize tag = _tag;
 
 - (instancetype)initWithInvitation:(DSBlockchainInvitation *)invitation index:(NSUInteger)index {
     self = [super init];
     if (self) {
         _blockchainInvitation = invitation;
+        _tag = invitation.tag;
         _index = index;
     }
     return self;
@@ -60,9 +62,11 @@ NS_ASSUME_NONNULL_END
 }
 
 - (NSString *)title {
+    NSString *tag = [self.tag isEqualToString:@""] ? nil : self.tag;
+
     return self.blockchainInvitation.identity.currentDashpayUsername
-               ? self.blockchainInvitation.identity.currentDashpayUsername
-               : [NSString stringWithFormat:NSLocalizedString(@"Invitation %ld", @"Invitation #3"), self.index];
+            ? self.blockchainInvitation.identity.currentDashpayUsername
+            : (tag ? tag : [NSString stringWithFormat:NSLocalizedString(@"Invitation %ld", @"Invitation #3"), self.index]);
 }
 
 - (NSString *)subtitle {

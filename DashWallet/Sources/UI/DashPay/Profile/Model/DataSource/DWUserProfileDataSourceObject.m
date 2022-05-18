@@ -82,7 +82,7 @@ NS_ASSUME_NONNULL_END
         if (meToFriend) {
             _outgoingNotification =
                 [[DWDPOutgoingRequestNotificationObject alloc] initWithFriendRequestEntity:meToFriend
-                                                                        blockchainIdentity:myBlockchainIdentity
+                                                                        blockchainIdentity:friendBlockchainIdentity
                                                                            isInitiatedByMe:!isFriendInitiated];
         }
         else {

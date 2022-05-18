@@ -26,6 +26,7 @@
 
 @synthesize blockchainIdentity = _blockchainIdentity;
 @synthesize username = _username;
+@synthesize displayName = _displayName;
 
 - (instancetype)initWithBlockchainIdentity:(DSBlockchainIdentity *)blockchainIdentity {
     self = [super init];
@@ -47,7 +48,12 @@
 }
 
 - (NSString *)displayName {
-    return nil;
+    if (_displayName == nil) {
+        BOOL hasDisplayName = _blockchainIdentity.displayName.length > 0;
+        _displayName = hasDisplayName ? _blockchainIdentity.displayName : nil;
+    }
+    
+    return _displayName;
 }
 
 - (NSString *)username {

@@ -37,11 +37,18 @@
     const BOOL isFriendRequestBacked = [item conformsToProtocol:@protocol(DWDPFriendRequestBackedItem)];
     NSAssert(isBlockchainIdentityBacked || isFriendRequestBacked, @"Invalid item to accept contact request");
 
-    id<DWDPNewIncomingRequestItem> newRequestItem = (id<DWDPNewIncomingRequestItem>)item;
+    __block id<DWDPNewIncomingRequestItem> newRequestItem = (id<DWDPNewIncomingRequestItem>)item;
     newRequestItem.requestState = DWDPNewIncomingRequestItemState_Processing;
 
     void (^resultCompletion)(BOOL success, NSArray<NSError *> *errors) = ^(BOOL success, NSArray<NSError *> *errors) {
-        newRequestItem.requestState = success ? DWDPNewIncomingRequestItemState_Accepted : DWDPNewIncomingRequestItemState_Failed;
+        if (newRequestItem == nil)
+        {
+            NSLog(@"324 %lu", (unsigned long)((id<DWDPNewIncomingRequestItem>)newRequestItem).requestState);
+        }
+        
+        NSLog(@"%lu", (unsigned long)((id<DWDPNewIncomingRequestItem>)newRequestItem).requestState);
+        
+        ((id<DWDPNewIncomingRequestItem>)newRequestItem).requestState = success ? DWDPNewIncomingRequestItemState_Accepted : DWDPNewIncomingRequestItemState_Failed;
 
         if (!success) {
             DWNetworkErrorViewController *controller = [[DWNetworkErrorViewController alloc] initWithType:DWErrorDescriptionType_AcceptContactRequest];

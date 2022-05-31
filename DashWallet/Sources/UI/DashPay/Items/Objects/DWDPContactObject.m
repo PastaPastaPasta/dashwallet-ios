@@ -44,7 +44,8 @@
 
 - (NSString *)displayName {
     if (_displayName == nil) {
-        _displayName = [self.userEntity.displayName copy];
+        NSString *userName = [self.userEntity.displayName copy];
+        _displayName = [userName isEqualToString:@""] ? nil : userName;
     }
     return _displayName;
 }

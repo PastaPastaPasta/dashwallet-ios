@@ -23,7 +23,7 @@
 #import "DWInvitationHistoryModel.h"
 #import "DWInvitationTableViewCell.h"
 #import "DWSendInviteFlowController.h"
-#import "DWSuccessInvitationViewController.h"
+#import "dashwallet-Swift.h"
 #import "DWUIKit.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -65,6 +65,12 @@ NS_ASSUME_NONNULL_END
     [NSLayoutConstraint dw_activate:@[
         [self.tableView pinEdges:self.view],
     ]];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [_tableView reloadData];
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -150,12 +156,12 @@ NS_ASSUME_NONNULL_END
                                       }
 
                                       dispatch_async(dispatch_get_main_queue(), ^{
-                                          DWSuccessInvitationViewController *controller =
-                                              [[DWSuccessInvitationViewController alloc] initWithInvitation:item.blockchainInvitation
-                                                                                                   fullLink:invitationFullLink];
+                                          BaseInvitationViewController *controller =
+                                              [[BaseInvitationViewController alloc] initWith:item.blockchainInvitation
+                                                                                                   fullLink:invitationFullLink
+                                              index:indexPath.row + 1];
                                           controller.title = NSLocalizedString(@"Invite", nil);
                                           controller.hidesBottomBarWhenPushed = YES;
-                                          controller.displayAsDetails = YES;
                                           controller.view.backgroundColor = [UIColor dw_secondaryBackgroundColor];
                                           [self.navigationController pushViewController:controller animated:YES];
                                       });

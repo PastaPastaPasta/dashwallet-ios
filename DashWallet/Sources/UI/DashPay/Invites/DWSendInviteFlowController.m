@@ -22,8 +22,9 @@
 #import "DWFullScreenModalControllerViewController.h"
 #import "DWNavigationController.h"
 #import "DWSendInviteFirstStepViewController.h"
-#import "DWSuccessInvitationViewController.h"
+
 #import "DWUIKit.h"
+#import "dashwallet-Swift.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -31,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
     DWSendInviteFirstStepViewControllerDelegate,
     DWConfirmInvitationViewControllerDelegate,
     DWFullScreenModalControllerViewControllerDelegate,
-    DWSuccessInvitationViewControllerDelegate>
+    SuccessInvitationViewControllerDelegate>
 
 @end
 
@@ -58,9 +59,8 @@ NS_ASSUME_NONNULL_END
 }
 
 - (void)showSuccessInvitation:(DSBlockchainInvitation *)invitation fullLink:(NSString *)fullLink {
-    DWSuccessInvitationViewController *invitationController =
-        [[DWSuccessInvitationViewController alloc] initWithInvitation:invitation
-                                                             fullLink:fullLink];
+    SuccessInvitationViewController *invitationController =
+    [[SuccessInvitationViewController alloc] initWith:invitation fullLink:fullLink index:0];
     invitationController.delegate = self;
     DWFullScreenModalControllerViewController *modal =
         [[DWFullScreenModalControllerViewController alloc] initWithController:invitationController];
@@ -100,7 +100,7 @@ NS_ASSUME_NONNULL_END
 
 #pragma mark - DWSuccessInvitationViewControllerDelegate
 
-- (void)successInvitationViewControllerDidSelectLater:(DWSuccessInvitationViewController *)controller {
+- (void)successInvitationViewControllerDidSelectLater:(SuccessInvitationViewController *)controller {
     [controller dismissViewControllerAnimated:YES
                                    completion:^{
                                        [self.delegate sendInviteFlowControllerDidFinish:self];

@@ -81,8 +81,6 @@
 		2A2692B425EBD30C00835B30 /* DWConfirmInvitationContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A2692B225EBD30C00835B30 /* DWConfirmInvitationContentView.xib */; };
 		2A2692BD25EBD36600835B30 /* DWConfirmInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2692BC25EBD36600835B30 /* DWConfirmInvitationViewController.m */; };
 		2A2692CD25EBD9D500835B30 /* DWSuccessInvitationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2692CC25EBD9D500835B30 /* DWSuccessInvitationView.m */; };
-		2A2692E825EBF08600835B30 /* DWSuccessInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2692E725EBF08600835B30 /* DWSuccessInvitationViewController.m */; };
-		2A2692F125EBF0C100835B30 /* DWSuccessInvitationTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2692F025EBF0C100835B30 /* DWSuccessInvitationTopView.m */; };
 		2A288160261C422D0014C212 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A28815F261C422D0014C212 /* GoogleService-Info.plist */; };
 		2A2CD6E822F46D40008C7BC9 /* DWBalanceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CD6E722F46D40008C7BC9 /* DWBalanceModel.m */; };
 		2A2CD6EB22F47592008C7BC9 /* DWShortcutsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CD6EA22F47592008C7BC9 /* DWShortcutsView.m */; };
@@ -557,6 +555,11 @@
 		2AFF01E0243F74BF003718DC /* DWDPRegistrationErrorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AFF01DE243F74BE003718DC /* DWDPRegistrationErrorTableViewCell.xib */; };
 		2AFF01E5243F8626003718DC /* DWDPRegistrationDoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AFF01E3243F8625003718DC /* DWDPRegistrationDoneTableViewCell.m */; };
 		2AFF01E6243F8626003718DC /* DWDPRegistrationDoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AFF01E4243F8625003718DC /* DWDPRegistrationDoneTableViewCell.xib */; };
+		474EF04928363D860058BEB5 /* BaseInvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EF04828363D860058BEB5 /* BaseInvitationViewController.swift */; };
+		474EF04B28363FB10058BEB5 /* SuccessInvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EF04A28363FB00058BEB5 /* SuccessInvitationViewController.swift */; };
+		474EF04D28365BA80058BEB5 /* InvitationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EF04C28365BA80058BEB5 /* InvitationTopView.swift */; };
+		474EF04F28365BD10058BEB5 /* SuccessInvitationTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EF04E28365BD10058BEB5 /* SuccessInvitationTopView.swift */; };
+		474EF05128366ED70058BEB5 /* InvitationBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474EF05028366ED70058BEB5 /* InvitationBottomView.swift */; };
 		6098930069A2E5BD400105F2 /* libPods-dashwallet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EE9427000A11C126C1B6D5C /* libPods-dashwallet.a */; };
 		6E0C700FAEDFA1640236740F /* libPods-DashWalletScreenshotsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB75CB02027FE87FECFF8C2 /* libPods-DashWalletScreenshotsUITests.a */; };
 		6F15F911B08D63E7EDF2AFE7 /* libPods-WatchApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DFCFC44A3045BC1873FEEF0 /* libPods-WatchApp.a */; };
@@ -840,10 +843,6 @@
 		2A2692BC25EBD36600835B30 /* DWConfirmInvitationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWConfirmInvitationViewController.m; sourceTree = "<group>"; };
 		2A2692CB25EBD9D500835B30 /* DWSuccessInvitationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWSuccessInvitationView.h; sourceTree = "<group>"; };
 		2A2692CC25EBD9D500835B30 /* DWSuccessInvitationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWSuccessInvitationView.m; sourceTree = "<group>"; };
-		2A2692E625EBF08600835B30 /* DWSuccessInvitationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWSuccessInvitationViewController.h; sourceTree = "<group>"; };
-		2A2692E725EBF08600835B30 /* DWSuccessInvitationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWSuccessInvitationViewController.m; sourceTree = "<group>"; };
-		2A2692EF25EBF0C100835B30 /* DWSuccessInvitationTopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWSuccessInvitationTopView.h; sourceTree = "<group>"; };
-		2A2692F025EBF0C100835B30 /* DWSuccessInvitationTopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWSuccessInvitationTopView.m; sourceTree = "<group>"; };
 		2A2692F825EBF74900835B30 /* DWScrollingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DWScrollingViewController.h; sourceTree = "<group>"; };
 		2A2692F925EBF74900835B30 /* DWScrollingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DWScrollingViewController.m; sourceTree = "<group>"; };
 		2A28815F261C422D0014C212 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -1814,6 +1813,12 @@
 		3410FBA3C9ECBF291385B203 /* Pods-dashwallet no watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashwallet no watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-dashwallet no watch/Pods-dashwallet no watch.release.xcconfig"; sourceTree = "<group>"; };
 		362213F26B43E7CB81B2FCE2 /* Pods-dashwallet.testnet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashwallet.testnet.xcconfig"; path = "Pods/Target Support Files/Pods-dashwallet/Pods-dashwallet.testnet.xcconfig"; sourceTree = "<group>"; };
 		3F1166CA5F04BE56F53C9011 /* libPods-WatchApp Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WatchApp Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		474EF04828363D860058BEB5 /* BaseInvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInvitationViewController.swift; sourceTree = "<group>"; };
+		474EF04A28363FB00058BEB5 /* SuccessInvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInvitationViewController.swift; sourceTree = "<group>"; };
+		474EF04C28365BA80058BEB5 /* InvitationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationTopView.swift; sourceTree = "<group>"; };
+		474EF04E28365BD10058BEB5 /* SuccessInvitationTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessInvitationTopView.swift; sourceTree = "<group>"; };
+		474EF05028366ED70058BEB5 /* InvitationBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationBottomView.swift; sourceTree = "<group>"; };
+		47B25AA42834D1BE0019A500 /* dashwallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dashwallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		556B5EBEBAEA571D74FF69A3 /* Pods-WatchApp Extension.testflight.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp Extension.testflight.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp Extension/Pods-WatchApp Extension.testflight.xcconfig"; sourceTree = "<group>"; };
 		5DFCFC44A3045BC1873FEEF0 /* libPods-WatchApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WatchApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FD4C91FB8EAB529E8E41227 /* Pods-dashwallet no watch.testnet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dashwallet no watch.testnet.xcconfig"; path = "Pods/Target Support Files/Pods-dashwallet no watch/Pods-dashwallet no watch.testnet.xcconfig"; sourceTree = "<group>"; };
@@ -2312,10 +2317,10 @@
 			isa = PBXGroup;
 			children = (
 				2A2692DA25EBD9DB00835B30 /* Views */,
-				2A2692E625EBF08600835B30 /* DWSuccessInvitationViewController.h */,
-				2A2692E725EBF08600835B30 /* DWSuccessInvitationViewController.m */,
 				2AEF8C45261E48050018719C /* DWInvitationLinkBuilder.h */,
 				2AEF8C46261E48050018719C /* DWInvitationLinkBuilder.m */,
+				474EF04828363D860058BEB5 /* BaseInvitationViewController.swift */,
+				474EF04A28363FB00058BEB5 /* SuccessInvitationViewController.swift */,
 			);
 			path = Invitation;
 			sourceTree = "<group>";
@@ -2325,12 +2330,13 @@
 			children = (
 				2A2692CB25EBD9D500835B30 /* DWSuccessInvitationView.h */,
 				2A2692CC25EBD9D500835B30 /* DWSuccessInvitationView.m */,
-				2A2692EF25EBF0C100835B30 /* DWSuccessInvitationTopView.h */,
-				2A2692F025EBF0C100835B30 /* DWSuccessInvitationTopView.m */,
 				2A68089E25EC2C3200829FC8 /* DWInvitationActionsView.h */,
 				2A68089F25EC2C3200829FC8 /* DWInvitationActionsView.m */,
 				2AB59C8D25F8122800AB8C9C /* DWInvitationMessageView.h */,
 				2AB59C8E25F8122800AB8C9C /* DWInvitationMessageView.m */,
+				474EF04C28365BA80058BEB5 /* InvitationTopView.swift */,
+				474EF04E28365BD10058BEB5 /* SuccessInvitationTopView.swift */,
+				474EF05028366ED70058BEB5 /* InvitationBottomView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -4858,6 +4864,7 @@
 		75D5F3C8191EC270004AB296 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				47B25AA42834D1BE0019A500 /* dashwallet-Bridging-Header.h */,
 				2A28815F261C422D0014C212 /* GoogleService-Info.plist */,
 				2A8F420821BED16300858B91 /* DashSyncCurrentCommit */,
 				75D5F3C9191EC270004AB296 /* Info.plist */,
@@ -5166,7 +5173,7 @@
 						TestTargetID = 75D5F3BD191EC270004AB296;
 					};
 					75D5F3BD191EC270004AB296 = {
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1330;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -5698,6 +5705,7 @@
 				2ACCD84D23180E7E00A96B62 /* DWPaymentOutput.m in Sources */,
 				2AB3415E23A8133A004E37A7 /* DWPayModelStub.m in Sources */,
 				2A74EFF1230531DA00C475EB /* DWRecoverContentView.m in Sources */,
+				474EF04F28365BD10058BEB5 /* SuccessInvitationTopView.swift in Sources */,
 				2AD1CE9022DD070000C99324 /* DWSeedPhraseViewLayout.m in Sources */,
 				2AF26F3E230C1F79007F9228 /* DWAmountViewController.m in Sources */,
 				2A63003F2327B4BB00827825 /* DWPaymentOutput+DWView.m in Sources */,
@@ -5776,7 +5784,6 @@
 				2A8DB9B226300D98009094BD /* DWHistoryFilterViewController.m in Sources */,
 				2A913E6F23A26663006A2A59 /* DWOnboardingViewController.m in Sources */,
 				2A9E7DCA23F6BD5200CDA1EE /* DWUsernameValidationView.m in Sources */,
-				2A2692F125EBF0C100835B30 /* DWSuccessInvitationTopView.m in Sources */,
 				2A7AF37224826CDF001D74F9 /* DWDPAcceptedRequestNotificationObject.m in Sources */,
 				2A44313922CE2CB9009BAF7F /* DWPinView.m in Sources */,
 				2A9E7DCE23F6C01A00CDA1EE /* DWUsernameValidationRule.m in Sources */,
@@ -5851,6 +5858,7 @@
 				2AEC5CBE24940EC200F4A689 /* DWDPOutgoingRequestNotificationObject.m in Sources */,
 				2A4E535C22F335C200E5168A /* DWTransactionListDataProvider.m in Sources */,
 				2AB510BA25EA61DE00392683 /* DWInvitationSuggestionView.m in Sources */,
+				474EF04B28363FB10058BEB5 /* SuccessInvitationViewController.swift in Sources */,
 				2A1B7DA82323AF4300BA8C6A /* DWModalPopupTransition.m in Sources */,
 				2A7F3B1B238C646600DEA3EF /* DWAdvancedSecurityViewController.m in Sources */,
 				2AFCB9B423BDEEFE00FF59A6 /* DWReceiveAmountModel.m in Sources */,
@@ -5893,6 +5901,7 @@
 				2AB8CDE4220DCA7D00A3D1DB /* DWNumberKeyboard.m in Sources */,
 				2A913EA823A79AD2006A2A59 /* DWTransactionListDataProviderStub.m in Sources */,
 				2A885FD02449F37A00B9F679 /* DWUserSearchModel.m in Sources */,
+				474EF04928363D860058BEB5 /* BaseInvitationViewController.swift in Sources */,
 				2A95D61127027DEE00B0BF5C /* DWExploreTestnetContentsView.m in Sources */,
 				2A44AAF525C6DA0A00671AC3 /* DWImgurInfoChildView.m in Sources */,
 				2A7AF3502482374D001D74F9 /* DWDPBasicCell.m in Sources */,
@@ -5998,6 +6007,7 @@
 				2A80F3D924DC55CD003E3B1E /* DWUserProfileSendRequestCell.m in Sources */,
 				2A25A99C2578C3B600BBD5C5 /* DWBasePressableControl.m in Sources */,
 				2A1B7DC62326775600BA8C6A /* DWSuccessfulTransactionAnimatedIconView.m in Sources */,
+				474EF04D28365BA80058BEB5 /* InvitationTopView.swift in Sources */,
 				2A5BD59E2451F39500688A8D /* DWCheckExistenceUsernameValidationRule.m in Sources */,
 				2A5E4548243E06E7006BA067 /* DWDPRegistrationStatusTableViewCell.m in Sources */,
 				2ADDF998251B7C3C00DA8926 /* DWEditProfileViewController.m in Sources */,
@@ -6007,7 +6017,6 @@
 				2AF405C1260FE90C000A8DAB /* DWGetStartedContentViewController.m in Sources */,
 				2A74EFE92305264200C475EB /* DWBaseActionButtonViewController.m in Sources */,
 				2A0FF69E2513A305006B6801 /* DWInfoPopupViewController.m in Sources */,
-				2A2692E825EBF08600835B30 /* DWSuccessInvitationViewController.m in Sources */,
 				FB3FF0B822264DC60059A9A5 /* DWDerivationPathKeysViewController.m in Sources */,
 				2A913E8C23A3134E006A2A59 /* UIView+DWEmbedding.m in Sources */,
 				2A2CD6E822F46D40008C7BC9 /* DWBalanceModel.m in Sources */,
@@ -6145,6 +6154,7 @@
 				2A63004E2328F37C00827825 /* DWLockScreenViewController.m in Sources */,
 				2AD1CE8422DC9B5D00C99324 /* DWVerifySeedPhraseViewController.m in Sources */,
 				2A913E9823A400D3006A2A59 /* DWContainerViewController.m in Sources */,
+				474EF05128366ED70058BEB5 /* InvitationBottomView.swift in Sources */,
 				2A44AB0D25C6F0F400671AC3 /* DWImgurInfoViewController.m in Sources */,
 				2A8F422021BEFEEA00858B91 /* DWAboutModel.m in Sources */,
 				2AB7303E24D0BC0400DCB420 /* UIColor+DWDashPay.m in Sources */,
@@ -6299,6 +6309,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FBBFC90577C940D8C04E0B1 /* Pods-DashWalletScreenshotsUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -6328,6 +6339,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 75EDC78DE1686E55AE12233C /* Pods-DashWalletScreenshotsUITests.testnet.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -6355,6 +6367,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A9529BDC33490B8F700E733D /* Pods-DashWalletScreenshotsUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -6382,6 +6395,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EA95ACF6CA2A73810B9BB451 /* Pods-DashWalletScreenshotsUITests.testflight.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -6536,8 +6550,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwallet.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DashWallet/DashWallet-Prefix.pch";
@@ -6554,7 +6569,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dashpaytnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DashWallet/dashwallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -6567,8 +6584,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwallet.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DashWallet/DashWallet-Prefix.pch";
@@ -6584,7 +6602,8 @@
 				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dashpaytnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DashWallet/dashwallet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 arm64e";
@@ -6596,6 +6615,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87872BF3D40B38CD0FC246AB /* Pods-DashWalletTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dashwallet.app/dashwallet";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6623,6 +6643,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAC103D2F3C1CE8C7A598E78 /* Pods-DashWalletTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dashwallet.app/dashwallet";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6652,7 +6673,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
@@ -6673,7 +6694,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
@@ -6692,7 +6713,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C98AA93FF5283EC6405BCE4B /* Pods-WatchApp Extension.debug.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -6713,7 +6734,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE02413EF0C60B1D1EDE6457 /* Pods-WatchApp Extension.release.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
@@ -6736,7 +6757,7 @@
 			baseConfigurationReference = 206554BC730E9F2BB594D044 /* Pods-TodayExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwalletTodayExtension.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -6760,7 +6781,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwalletTodayExtension.entitlements;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -6846,8 +6867,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwallet.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DashWallet/DashWallet-Prefix.pch";
@@ -6863,7 +6885,8 @@
 				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dashpaytnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DashWallet/dashwallet-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "arm64 arm64e";
@@ -6877,7 +6900,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwalletTodayExtension.entitlements;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -6900,6 +6923,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B9E5C217A0E8B1689F8307D1 /* Pods-DashWalletTests.testflight.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dashwallet.app/dashwallet";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -6929,7 +6953,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
@@ -6948,7 +6972,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 556B5EBEBAEA571D74FF69A3 /* Pods-WatchApp Extension.testflight.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -7038,8 +7062,9 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwallet.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DashWallet/DashWallet-Prefix.pch";
@@ -7055,7 +7080,9 @@
 				MARKETING_VERSION = 5.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.dashfoundation.dashpaytnt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "DashWallet/dashwallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -7067,7 +7094,7 @@
 			baseConfigurationReference = 8A9877BEC5093CED81768D3D /* Pods-TodayExtension.testnet.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = dashwallet/dashwalletTodayExtension.entitlements;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -7089,6 +7116,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B49B8EA157CD1A34396D7677 /* Pods-DashWalletTests.testnet.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/dashwallet.app/dashwallet";
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -7118,7 +7146,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				IBSC_MODULE = WatchApp_Extension;
 				INFOPLIST_FILE = WatchApp/Info.plist;
@@ -7137,7 +7165,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29B232FD70BA2EDF87F86A56 /* Pods-WatchApp Extension.testnet.xcconfig */;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 44RJ69WHFF;
 				INFOPLIST_FILE = "WatchApp Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

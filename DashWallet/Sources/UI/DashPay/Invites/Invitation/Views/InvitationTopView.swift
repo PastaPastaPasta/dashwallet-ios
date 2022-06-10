@@ -85,7 +85,7 @@ class InvitationTopView: BaseInvitationTopView {
         
         let tag = invitation.tag.isEmpty ? nil : invitation.tag
         let defaultTitle = NSString.localizedStringWithFormat(NSLocalizedString("Invitation %ld", comment: "") as NSString, index)
-        let title = (tag ?? String(defaultTitle))
+        let title = invitation.name ?? (tag ?? String(defaultTitle))
         titleLabel.text = title
             
         

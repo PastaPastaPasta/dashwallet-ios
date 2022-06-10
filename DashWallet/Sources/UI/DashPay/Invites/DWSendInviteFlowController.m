@@ -100,11 +100,11 @@ NS_ASSUME_NONNULL_END
 
 #pragma mark - DWSuccessInvitationViewControllerDelegate
 
-- (void)successInvitationViewControllerDidSelectLater:(SuccessInvitationViewController *)controller {
+- (void)successInvitationViewControllerDidSelectLaterWithController:(SuccessInvitationViewController *)controller {
     [controller dismissViewControllerAnimated:YES
                                    completion:^{
-                                       [self.delegate sendInviteFlowControllerDidFinish:self];
-                                   }];
+        [self.delegate sendInviteFlowControllerDidFinish:self];
+    }];
 }
 
 @end

@@ -65,9 +65,10 @@ NS_ASSUME_NONNULL_END
 }
 
 - (NSString *)title {
+    NSString *name = _blockchainInvitation.name;
     NSString *tag = [self.tag isEqualToString:@""] ? nil : self.tag;
 
-    return (tag ? tag : [NSString stringWithFormat:NSLocalizedString(@"Invitation %ld", @"Invitation #3"), self.index]);
+    return (tag ? tag : (name ? name : [NSString stringWithFormat:NSLocalizedString(@"Invitation %ld", @"Invitation #3"), self.index]));
 }
 
 - (NSString *)subtitle {
@@ -117,7 +118,7 @@ NS_ASSUME_NONNULL_END
     ];
     NSArray<DSBlockchainInvitation *> *invitations = [wallet.blockchainInvitations.allValues
         sortedArrayUsingDescriptors:descriptors];
-    NSUInteger index = 1;
+    NSUInteger index = invitations.count;
     NSMutableArray<DWInvitationHistoryItemImpl *> *mutableItems = [NSMutableArray arrayWithCapacity:invitations.count];
     for (DSBlockchainInvitation *invitation in invitations) {
         BOOL shouldInclude = NO;
@@ -141,7 +142,7 @@ NS_ASSUME_NONNULL_END
                                                                   index:index];
             [mutableItems addObject:item];
 
-            index += 1;
+            index -= 1;
         }
     }
     self.items = mutableItems;

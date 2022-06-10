@@ -63,7 +63,9 @@ NS_ASSUME_NONNULL_END
     DSWallet *wallet = [DWEnvironment sharedInstance].currentWallet;
     DSAccount *account = [DWEnvironment sharedInstance].currentAccount;
     DSBlockchainInvitation *invitation = [wallet createBlockchainInvitation];
-
+    invitation.name = [NSString stringWithFormat:NSLocalizedString(@"Invitation %ld", @"Invitation #3"), wallet.blockchainInvitations.count + 1];
+    
+    
     DSBlockchainIdentityRegistrationStep steps = DSBlockchainIdentityRegistrationStep_L1Steps;
     [invitation generateBlockchainInvitationsExtendedPublicKeysWithPrompt:NSLocalizedString(@"Create invitation", nil)
                                                                completion:^(BOOL registered) {

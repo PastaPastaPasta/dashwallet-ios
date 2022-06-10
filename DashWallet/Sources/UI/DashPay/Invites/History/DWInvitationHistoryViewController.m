@@ -140,7 +140,8 @@ NS_ASSUME_NONNULL_END
     DSBlockchainIdentity *myBlockchainIdentity = wallet.defaultBlockchainIdentity;
 
     id<DWInvitationHistoryItem> item = self.model.items[indexPath.row];
-
+    NSUInteger index =  self.model.items.count - indexPath.row;
+    
     __weak typeof(self) weakSelf = self;
     [item.blockchainInvitation
         createInvitationFullLinkFromIdentity:myBlockchainIdentity
@@ -159,7 +160,7 @@ NS_ASSUME_NONNULL_END
                                           BaseInvitationViewController *controller =
                                               [[BaseInvitationViewController alloc] initWith:item.blockchainInvitation
                                                                                                    fullLink:invitationFullLink
-                                              index:indexPath.row + 1];
+                                              index:index];
                                           controller.title = NSLocalizedString(@"Invite", nil);
                                           controller.hidesBottomBarWhenPushed = YES;
                                           controller.view.backgroundColor = [UIColor dw_secondaryBackgroundColor];

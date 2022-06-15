@@ -22,6 +22,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSNotificationName const DWDashPayRegistrationStatusUpdatedNotification;
+extern NSNotificationName const DWDashPaySentContactRequestToInviter;
 
 @class DWDPRegistrationStatus;
 @class DSBlockchainIdentity;

@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 }
 
 - (BOOL)isEmpty {
-    return (self.items.count == 0);
+    return (!self.showsRegistrationStatus && self.items.count == 0);
 }
 
 - (BOOL)showsRegistrationStatus {

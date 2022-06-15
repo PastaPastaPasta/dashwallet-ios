@@ -29,6 +29,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 NSNotificationName const DWDashPayRegistrationStatusUpdatedNotification = @"DWDashPayRegistrationStatusUpdatedNotification";
+NSNotificationName const DWDashPaySentContactRequestToInviter = @"kDWDashPaySentContactRequestToInviter";
 
 @interface DWDashPayModel ()
 
@@ -405,6 +406,7 @@ NS_ASSUME_NONNULL_END
     const BOOL failed = error != nil;
     self.registrationStatus = [[DWDPRegistrationStatus alloc] initWithState:state failed:failed username:self.username];
 
+    //TODO: if we came here from invitation link — destroy everything what's related to identities and just show an error
     [[NSNotificationCenter defaultCenter] postNotificationName:DWDashPayRegistrationStatusUpdatedNotification object:nil];
 }
 

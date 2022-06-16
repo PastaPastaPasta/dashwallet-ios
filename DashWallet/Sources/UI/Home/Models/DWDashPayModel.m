@@ -401,12 +401,17 @@ NS_ASSUME_NONNULL_END
         self.lastRegistrationError = error;
     }
 
-    DWDPRegistrationState state = [self stateForCompletedSteps:stepsCompleted];
-
     const BOOL failed = error != nil;
+    
+    if(failed && self.blockchainIdentity.isFromIncomingInvitation) {
+        [self cancel];
+        [self.blockchainIdentity unregisterLocally];
+        return;
+    }
+    
+    DWDPRegistrationState state = [self stateForCompletedSteps:stepsCompleted];
     self.registrationStatus = [[DWDPRegistrationStatus alloc] initWithState:state failed:failed username:self.username];
 
-    //TODO: if we came here from invitation link — destroy everything what's related to identities and just show an error
     [[NSNotificationCenter defaultCenter] postNotificationName:DWDashPayRegistrationStatusUpdatedNotification object:nil];
 }
 

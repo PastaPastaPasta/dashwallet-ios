@@ -34,4 +34,6 @@ enum CrowdNodeConstants {
     static var apiOffset: UInt64 = 20000
     
     static var websiteUrl: String = "https://crowdnode.io/"
+    static var termsOfUseUrl: String = "https://crowdnode.io/terms/"
+    static var privacyPolicyUrl: String = "https://crowdnode.io/privacy/"
 }

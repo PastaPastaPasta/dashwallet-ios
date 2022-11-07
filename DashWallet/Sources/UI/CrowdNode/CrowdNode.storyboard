@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,52 +18,133 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbk-ty-UO1">
-                                <rect key="frame" x="16" y="367" width="358" height="72"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New CrowdNode Account" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGO-bv-xnp" userLabel="Title Label">
+                                <rect key="frame" x="20" y="61.999999999999993" width="350" height="28.666666666666664"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ely-BQ-7hu" userLabel="Address Label">
-                                <rect key="frame" x="16" y="447" width="358" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxQ-U0-ggd" userLabel="Explainer One">
+                                <rect key="frame" x="20" y="100.66666666666669" width="350" height="67"/>
+                                <string key="text">CrowdNode uses this address as your account ID. You will lose access to your funds within this wallet and your CrowdNode account if you lose the passphrase associated to this address.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="TertiaryTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnW-zm-pFT">
-                                <rect key="frame" x="96" y="274" width="199" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Very small amounts of Dash will be sent to and from CrowdNode to verify that you are the owner of this wallet address." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dX-4E-qVf" userLabel="Explainer Two">
+                                <rect key="frame" x="20" y="177.66666666666666" width="350" height="50.333333333333343"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" name="TertiaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DJ-bK-bvd" userLabel="Action Button" customClass="DWActionButton">
+                                <rect key="frame" x="20" y="744" width="350" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="XCM-8z-ZOE"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Create Account"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Create Account"/>
                                 <connections>
-                                    <action selector="createAccountAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sMW-SH-dUw"/>
+                                    <action selector="continueAction" destination="Y6W-OH-hqX" eventType="touchUpInside" id="M7h-fG-nBq"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="l8C-lh-lKO">
-                                <rect key="frame" x="185" y="329" width="20" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sg3-mL-EdP">
-                                <rect key="frame" x="163" y="503" width="64" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Copy"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxj-pM-Pl9" userLabel="Address Container">
+                                <rect key="frame" x="20" y="258" width="350" height="58"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Dash address" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7C-3J-thP" userLabel="Account Label">
+                                        <rect key="frame" x="15" y="9" width="77.333333333333329" height="14.333333333333336"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <color key="textColor" name="TertiaryTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="yfLBSjZxH9Ut2aVNHRy6xRm3CwynpU2GQw" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lPE-iA-urR" userLabel="Account Address">
+                                        <rect key="frame" x="15" y="28.333333333333314" width="320" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="de8-l5-sCC" userLabel="Copy Button">
+                                        <rect key="frame" x="310" y="14" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7uL-7t-igU"/>
+                                            <constraint firstAttribute="width" secondItem="de8-l5-sCC" secondAttribute="height" multiplier="1:1" id="dqP-HR-pDv"/>
+                                        </constraints>
+                                        <color key="tintColor" name="IconTintColor"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="icon_copy_outline"/>
+                                        <connections>
+                                            <action selector="copyAddress" destination="Y6W-OH-hqX" eventType="touchDragInside" id="aIe-ub-IXz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92941176470588238" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="C7C-3J-thP" firstAttribute="top" secondItem="Nxj-pM-Pl9" secondAttribute="top" constant="9" id="4aB-8e-POb"/>
+                                    <constraint firstAttribute="trailing" secondItem="de8-l5-sCC" secondAttribute="trailing" constant="10" id="CK6-68-hJB"/>
+                                    <constraint firstAttribute="trailing" secondItem="lPE-iA-urR" secondAttribute="trailing" constant="15" id="HhJ-0i-L9m"/>
+                                    <constraint firstAttribute="height" constant="58" id="PoE-am-RAI"/>
+                                    <constraint firstItem="de8-l5-sCC" firstAttribute="centerY" secondItem="Nxj-pM-Pl9" secondAttribute="centerY" id="Q6Q-2H-4rx"/>
+                                    <constraint firstItem="lPE-iA-urR" firstAttribute="leading" secondItem="Nxj-pM-Pl9" secondAttribute="leading" constant="15" id="aua-GK-Se2"/>
+                                    <constraint firstItem="lPE-iA-urR" firstAttribute="top" secondItem="C7C-3J-thP" secondAttribute="bottom" constant="5" id="fgz-sO-LWt"/>
+                                    <constraint firstItem="C7C-3J-thP" firstAttribute="leading" secondItem="Nxj-pM-Pl9" secondAttribute="leading" constant="15" id="nav-T2-9rT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" verticalHuggingPriority="265" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="KKC-5N-ebV" customClass="DWCheckbox">
+                                <rect key="frame" x="15" y="682" width="35" height="35"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="GHQ-Kc-AV7"/>
+                                    <constraint firstAttribute="width" constant="35" id="ZAP-rH-WOn"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="copyOutput" destination="Y6W-OH-hqX" eventType="touchUpInside" id="KSv-Jm-8wT"/>
+                                    <action selector="onTermsChecked" destination="Y6W-OH-hqX" eventType="valueChanged" id="VQ6-86-rGX"/>
                                 </connections>
-                            </button>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="I agree to CrowdNode Terms of Use and Privacy Policy" translatesAutoresizingMaskIntoConstraints="NO" id="HH4-Qf-Qjr" userLabel="Check Box Label">
+                                <rect key="frame" x="50" y="682" width="320" height="52"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="UoT-nv-tbl"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1dX-4E-qVf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="07d-6L-I4d"/>
+                            <constraint firstItem="KKC-5N-ebV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="3k5-QL-TJU"/>
+                            <constraint firstItem="UxQ-U0-ggd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="6ay-hX-2I5"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4DJ-bK-bvd" secondAttribute="trailing" constant="20" id="A5k-2W-9nq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HH4-Qf-Qjr" secondAttribute="trailing" constant="20" id="Fps-Dv-hNa"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Nxj-pM-Pl9" secondAttribute="trailing" constant="20" id="Z5B-C7-AEc"/>
+                            <constraint firstItem="Nxj-pM-Pl9" firstAttribute="top" secondItem="1dX-4E-qVf" secondAttribute="bottom" constant="30" id="ZpQ-7x-lZ7"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="UxQ-U0-ggd" secondAttribute="trailing" constant="20" id="bfA-vR-ePZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="4DJ-bK-bvd" secondAttribute="bottom" constant="20" id="ccm-ci-unP"/>
+                            <constraint firstItem="HH4-Qf-Qjr" firstAttribute="leading" secondItem="KKC-5N-ebV" secondAttribute="trailing" id="eBS-5I-CPO"/>
+                            <constraint firstItem="4DJ-bK-bvd" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="eN3-2g-MQf"/>
+                            <constraint firstItem="1dX-4E-qVf" firstAttribute="top" secondItem="UxQ-U0-ggd" secondAttribute="bottom" constant="10" id="eXj-TS-s10"/>
+                            <constraint firstItem="Nxj-pM-Pl9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="fIT-Ka-nzk"/>
+                            <constraint firstItem="JGO-bv-xnp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="ngv-MS-1Zc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1dX-4E-qVf" secondAttribute="trailing" constant="20" id="qYj-3R-eco"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="JGO-bv-xnp" secondAttribute="trailing" constant="20" id="u8K-qm-knZ"/>
+                            <constraint firstItem="JGO-bv-xnp" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="uj9-xN-meh"/>
+                            <constraint firstItem="KKC-5N-ebV" firstAttribute="top" secondItem="HH4-Qf-Qjr" secondAttribute="top" id="xeo-6B-ND5"/>
+                            <constraint firstItem="HH4-Qf-Qjr" firstAttribute="bottom" secondItem="4DJ-bK-bvd" secondAttribute="top" constant="-10" id="y0O-uH-9Vu"/>
+                            <constraint firstItem="UxQ-U0-ggd" firstAttribute="top" secondItem="JGO-bv-xnp" secondAttribute="bottom" constant="10" id="z4W-le-SDu"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="actionButton" destination="FnW-zm-pFT" id="moS-Vv-9JP"/>
-                        <outlet property="addressLabel" destination="Ely-BQ-7hu" id="BII-eq-X5T"/>
-                        <outlet property="animationView" destination="l8C-lh-lKO" id="to5-ct-SH2"/>
-                        <outlet property="copyButton" destination="Sg3-mL-EdP" id="kdv-Hp-c2M"/>
-                        <outlet property="outputLabel" destination="lbk-ty-UO1" id="e3W-Xh-bed"/>
+                        <outlet property="actionButton" destination="4DJ-bK-bvd" id="IDa-uT-0D5"/>
+                        <outlet property="addressLabel" destination="lPE-iA-urR" id="u8P-2J-yE7"/>
+                        <outlet property="checkBox" destination="KKC-5N-ebV" id="x74-nl-AnV"/>
+                        <outlet property="checkBoxText" destination="HH4-Qf-Qjr" id="XsL-4Q-S5i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,6 +153,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_copy_outline" width="16" height="16"/>
+        <namedColor name="IconTintColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TertiaryTextColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

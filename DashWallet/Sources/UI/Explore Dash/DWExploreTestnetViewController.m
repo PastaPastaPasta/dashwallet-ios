@@ -55,14 +55,14 @@
 }
 
 - (void)showStakingIfSynced {
-    if (_syncModel.state == DWSyncModelState_SyncDone) {
+//    if (_syncModel.state == DWSyncModelState_SyncDone) {
         DWExploreTestnetViewController *__weak weakSelf = self;
 
         NewAccountViewController *vc = [NewAccountViewController controller];
         [self.navigationController pushViewController:vc animated:YES];
-    } else {
-        [self notifyChainSyncing];
-    }
+//    } else {
+//        [self notifyChainSyncing];
+//    }
 }
 
 - (void)notifyChainSyncing {

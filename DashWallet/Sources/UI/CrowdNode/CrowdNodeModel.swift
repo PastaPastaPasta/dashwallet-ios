@@ -32,8 +32,6 @@ final class CrowdNodeModel {
     }
 
     init() {
-        accountAddress = crowdNode.accountAddress
-
         crowdNode.$signUpState
             .sink { [weak self] state in
                 self?.signUpEnabled = false
@@ -70,18 +68,24 @@ final class CrowdNodeModel {
             .store(in: &cancellableBag)
         
         crowdNode.restoreState()
+        getAccountAddress()
+    }
+    
+    func getAccountAddress() {
+        if isInterrupted {
+            accountAddress = crowdNode.accountAddress
+        } else {
+            accountAddress = DWEnvironment.sharedInstance().currentAccount.receiveAddress ?? ""
+        }
     }
 
     func signUp() {
         Task {
-            let accountAddress: String
             let promptMessage: String
             
-            if crowdNode.signUpState == .acceptTermsRequired {
-                accountAddress = crowdNode.accountAddress
+            if isInterrupted {
                 promptMessage = NSLocalizedString("Accept Terms Of Use", comment: "")
             } else {
-                accountAddress = DWEnvironment.sharedInstance().currentAccount.receiveAddress ?? ""
                 promptMessage = NSLocalizedString("Sign up to CrowdNode", comment: "")
             }
             

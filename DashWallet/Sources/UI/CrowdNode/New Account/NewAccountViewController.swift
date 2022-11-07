@@ -17,17 +17,17 @@
 
 import Combine
 import UIKit
+import Foundation
 
-final class NewAccountViewController: UIViewController {
+final class NewAccountViewController: UIViewController, UITextViewDelegate {
     private let viewModel = CrowdNodeModel()
     private var cancellableBag = Set<AnyCancellable>()
 
-    @IBOutlet var actionButton: UIButton!
-    @IBOutlet var outputLabel: UILabel!
+    @IBOutlet var actionButton: DWActionButton!
     @IBOutlet var addressLabel: UILabel!
-    @IBOutlet var copyButton: UIButton!
-    @IBOutlet var animationView: UIActivityIndicatorView!
-
+    @IBOutlet var checkBox: DWCheckbox!
+    @IBOutlet var checkBoxText: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -41,12 +41,16 @@ final class NewAccountViewController: UIViewController {
         return vc
     }
 
-    @IBAction func createAccountAction() {
+    @IBAction func continueAction() {
         viewModel.signUp()
     }
 
-    @IBAction func copyOutput() {
+    @IBAction func copyAddress() {
         UIPasteboard.general.string = addressLabel.text
+    }
+    
+    @IBAction func onTermsChecked() {
+        actionButton.isEnabled = checkBox.isOn
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -58,44 +62,59 @@ final class NewAccountViewController: UIViewController {
 extension NewAccountViewController {
     private func configureHierarchy() {
         definesPresentationContext = true
-        view.backgroundColor = UIColor.dw_secondaryBackground()
+        view.backgroundColor = UIColor.dw_background()
         
+        configureActionButton()
+        configureAccountAddress()
+        configureTermsCheckBox()
+    }
+    
+    private func configureActionButton() {
         if viewModel.isInterrupted {
             actionButton.setTitle(NSLocalizedString("Accept Terms Of Use", comment: ""), for: .normal)
         } else {
-            actionButton.setTitle(NSLocalizedString("Sign up to CrowdNode", comment: ""), for: .normal)
+            actionButton.setTitle(NSLocalizedString("Create Account", comment: ""), for: .normal)
         }
     }
+    
+    private func configureAccountAddress() {
+        let gradientMaskLayer = CAGradientLayer()
+        gradientMaskLayer.frame = addressLabel.bounds
+        gradientMaskLayer.colors = [UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor, UIColor.clear.cgColor]
+        gradientMaskLayer.locations = [0, 0.7, 0.85, 1]
+        gradientMaskLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientMaskLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        addressLabel.layer.mask = gradientMaskLayer
+    }
+    
+    private func configureTermsCheckBox() {
+        let baseString = NSMutableAttributedString(string: NSLocalizedString("I agree to CrowdNode", comment: "").description)
+        let termsOfUseString = NSMutableAttributedString(string: NSLocalizedString(" Terms of Use ", comment: "").description)
+        let andString = NSMutableAttributedString(string: NSLocalizedString("and", comment: "").description)
+        let privacyPolicyString = NSMutableAttributedString(string: NSLocalizedString(" Privacy Policy ", comment: "").description)
+        
+        termsOfUseString.addAttribute(.link, value: CrowdNodeConstants.termsOfUseUrl, range: NSRange(location: 0, length: termsOfUseString.length))
+        privacyPolicyString.addAttribute(.link, value: CrowdNodeConstants.privacyPolicyUrl, range: NSRange(location: 0, length: privacyPolicyString.length))
+        
+        baseString.append(termsOfUseString)
+        baseString.append(andString)
+        baseString.append(privacyPolicyString)
+        
+        checkBoxText.attributedText = baseString
+        checkBoxText.font = UIFont.dw_regularFont(ofSize: 14)
+        checkBox.style = .square
+        checkBox.isOn = false
+    }
+    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+            UIApplication.shared.open(URL)
+            return false
+        }
 
     private func configureObservers() {
-        viewModel.$signUpEnabled
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.isEnabled, on: actionButton)
-            .store(in: &cancellableBag)
-
         viewModel.$accountAddress
             .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] address in
-                self?.addressLabel.text = address
-                self?.copyButton.isEnabled = !address.isEmpty
-            })
-            .store(in: &cancellableBag)
-
-        viewModel.$outputMessage
-            .receive(on: DispatchQueue.main)
-            .assign(to: \.text!, on: outputLabel)
-            .store(in: &cancellableBag)
-
-        viewModel.$isLoading
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: { [weak self] isLoading in
-                if isLoading {
-                    self?.animationView.startAnimating()
-                }
-                else {
-                    self?.animationView.stopAnimating()
-                }
-            })
+            .assign(to: \.text!, on: addressLabel)
             .store(in: &cancellableBag)
     }
 }
